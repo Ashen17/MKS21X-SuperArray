@@ -35,14 +35,19 @@ public class SuperArray{
   }
 
   public String get(int pos){
-    if (pos < 0 || pos >= size()){System.out.println("IndexOutOfBounds");}
-    return data[pos];
-  }
-  public void set(int pos, String str){
     if (pos < 0 || pos >= size()){
       System.out.println("IndexOutOfBounds");
+      return null;
     }
+    return data[pos];
+  }
+  public String set(int pos, String str){
+    if (pos < 0 || pos >= size()){
+      System.out.println("IndexOutOfBounds");
+      return null;
+    }
+    String old = data[pos];
     data[pos] = str;
-
+    return old;
   }
 }
