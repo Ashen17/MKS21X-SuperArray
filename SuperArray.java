@@ -63,6 +63,27 @@ public class SuperArray{
     size += 1;
     return true;
   }
+
+  public boolean contain(String str){
+    for (int n = 0; n < size; n++){
+      if (data[n].equals(str)){return true;}
+    }
+    return false;
+  }
+
+  public int indexOf(String str){
+    for (int n = 0; n < size; n++){
+      if (data[n].equals(str)){return n;}
+    }
+    return -1;
+  }
+
+  public int lastIndexOf(String str){
+    for (int n = size; n > -1; n--){
+      if (data[n].equals(str)){return n;}
+    }
+    return -1;
+  }
     //Static methods for testing purposes
   public static int getTrueSize(SuperArray x){
       return x.data.length;
