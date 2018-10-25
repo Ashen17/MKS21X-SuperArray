@@ -33,7 +33,6 @@ public class SuperArray{
     }
     return result + "]";
   }
-
   public String get(int pos){
     if (pos < 0 || pos >= size()){
       System.out.println("IndexOutOfBounds");
@@ -64,5 +63,10 @@ public class SuperArray{
     size += 1;
     return true;
   }
+    //Static methods for testing purposes
+  public static int getTrueSize(SuperArray x){
+      return x.data.length;
+    }
+
 
 }
