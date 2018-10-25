@@ -7,5 +7,8 @@ public class Driver{
     System.out.println(a);
     System.out.println(a.isEmpty());
     System.out.println(a.toStringDebug());
+    SuperArray b = new SuperArray();
+    for (int n = 0; n < 15; n++){b.add("BOO");}
+    System.out.println(b);
   }
 }

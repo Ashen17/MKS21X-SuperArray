@@ -4,7 +4,7 @@ public class SuperArray{
 
   public SuperArray(){
     data = new String[10];
-    size = 10;
+    size = 0;
   }
 
   public void clear(){
@@ -56,6 +56,12 @@ public class SuperArray{
       result[pos] = data[pos];
     }
     data = result;
+  }
+
+  public boolean add(String str){
+    if (data.length == size){resize();}
+    data[size] = str;
+    return true;
   }
 
 }
