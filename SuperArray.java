@@ -7,6 +7,10 @@ public class SuperArray{
     size = 0;
   }
 
+  public SuperArray(String[] ary){
+    data = ary;
+    size = ary.length;
+  }
   public void clear(){
     size = 0;
   }

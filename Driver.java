@@ -22,10 +22,10 @@ public class Driver{
     String[] d = new String[]{"hi", "bye", "greetings", "konichiwa", "hola", "nihao"};
     SuperArray c = new SuperArray(d);
     System.out.println("Expected: bye  Actual:" + c.get(1));
-    System.out.println("Expected: IndexOutOfBounds Actual:" + c.get(7));
-    System.out.println("Expected: IndexOutOfBounds Actual:" + c.get(-4));
-    System.out.println("Expected: IndexOutOfBounds Actual:" + c.set(7, "hello"));
-    System.out.println("Expected: IndexOutOfBounds Actual:" + c.set(-1, "hello"));
+    System.out.println("Expected: null Actual:" + c.get(7) + " IndexOutOfBounds will be printed above");
+    System.out.println("Expected: null Actual:" + c.get(-4) + " IndexOutOfBounds will be printed above");
+    System.out.println("Expected: null Actual:" + c.set(7, "hello") + " IndexOutOfBounds will be printed above");
+    System.out.println("Expected: null Actual:" + c.set(-1, "hello") + " IndexOutOfBounds will be printed above");
     System.out.println("Expected: hi Actual:" + c.get(0));
     System.out.println("Expected: {hi, bye, greetings, konichiwa, hola, nihao} Actual:" + c);
     c.set(0, "hello");
