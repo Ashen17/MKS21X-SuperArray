@@ -50,4 +50,12 @@ public class SuperArray{
     data[pos] = str;
     return old;
   }
+  public void resize(){
+    String[] result = new String[data.length * 2 + 1];
+    for (int pos = 0; pos < data.length;pos++ ){
+      result[pos] = data[pos];
+    }
+    data = result;
+  }
+
 }
