@@ -61,6 +61,7 @@ public class SuperArray{
   public boolean add(String str){
     if (data.length == size){resize();}
     data[size] = str;
+    size += 1;
     return true;
   }
 
