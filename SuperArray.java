@@ -4,11 +4,11 @@ public class SuperArray{
 
   public SuperArray(){
     data = new String[10];
-    size = 10
+    size = 10;
   }
 
   public void clear(){
-    size = 0
+    size = 0;
   }
 
   public int size(){
@@ -35,15 +35,14 @@ public class SuperArray{
   }
 
   public String get(int pos){
-    if (index < 0 || index >= size()){return null;}
+    if (pos < 0 || pos >= size()){System.out.println("IndexOutOfBounds");}
     return data[pos];
   }
-  public void set(int pos, String new){
-    if (index < 0 || index >= size()){
+  public void set(int pos, String str){
+    if (pos < 0 || pos >= size()){
       System.out.println("IndexOutOfBounds");
-      return null;
     }
-    data[pos] = new;
+    data[pos] = str;
 
   }
 }
