@@ -10,7 +10,9 @@ public class Driver{
     System.out.println("Expected: [] Actual:"+ a);
     System.out.println("Expected: true Actual:" + a.isEmpty());
     System.out.println("Expected: [MoM, MoM, MoM, MoM, MoM, MoM, MoM, MoM, null, null] Actual:"+a.toStringDebug());
-
+    String[] nothing = new String[]{};
+    SuperArray empty = new SuperArray(nothing);
+    System.out.println("Expected : [] Actual:" + empty);
     System.out.println("Resize and add additional testing");
     SuperArray b = new SuperArray();
     for (int n = 0; n < 15; n++){b.add("BOO");}
@@ -30,12 +32,12 @@ public class Driver{
     System.out.println("Expected: {hi, bye, greetings, konichiwa, hola, nihao} Actual:" + c);
     System.out.println("Expected: hi Actual:" + c.set(0, "hello"));
     System.out.println("Expected: hello Actual:" + c.get(0));
-    System.out.println("Expected: {hello, bye, greetings, konichiwa, hola, nihao} Actual:" + c);
+    System.out.println("Expected: [hello, bye, greetings, konichiwa, hola, nihao] Actual:" + c);
     System.out.println("Phase 3");
     String[] e = new String[]{"fire", "water", "electric", "normal", "grass", "earth"};
     SuperArray f = new SuperArray(e);
-    System.out.println("Expected: {fire, water, electric, normal, grass, earth} Actual:" + f);
-    System.out.println("Expected: {fire, water, electric, normal, grass, earth} Actual:" + f.toStringDebug());
+    System.out.println("Expected: [fire, water, electric, normal, grass, earth] Actual:" + f);
+    System.out.println("Expected: [fire, water, electric, normal, grass, earth] Actual:" + f.toStringDebug());
     System.out.println("Expected: true  Actual:" + f.contain("normal"));
     System.out.println("Expected: false  Actual:" + f.contain("Normal"));
     System.out.println("Expected: false  Actual:" + f.contain("psychic"));
@@ -50,5 +52,9 @@ public class Driver{
     System.out.println("Expected: 3  Actual:" + f.lastIndexOf("fire"));
     System.out.println("Expected: 4  Actual:" + f.indexOf("earth"));
     System.out.println("Expected: 5  Actual:" + f.lastIndexOf("earth"));
-    }
+    String[] h = new String[]{"hydrogen", "helium", "berylium", "boron", "carbon"};
+    SuperArray g = new SuperArray(h);
+    g.add(2, "lithium");
+    System.out.println("Expected:[hydrogen, helium, lithium, berylium, boron, carbon] Actual: " + g);
   }
+}

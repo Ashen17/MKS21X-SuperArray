@@ -28,17 +28,19 @@ public class SuperArray{
   }
 
   public String toString(){
-    String result = "[";
-    for (int p = 0; p < size; p++){
-      result += data[p] + "," + " ";
+    if (this.isEmpty()){return "[]";}
+    String result = "[" + data[0];
+    for (int p = 1; p < size ; p++){
+      result += "," + " " + data[p];
     }
     return result + "]";
   }
 
   public String toStringDebug(){
-    String result = "[";
-    for (int p = 0; p < data.length; p++){
-      result += data[p] + "," + " ";
+    if (data.length == 0){return "[]";}
+    String result = "[" + data[0];
+    for (int p = 1; p < data.length; p++){
+      result +=  "," + " " + data[p];
     }
     return result + "]";
   }
@@ -95,14 +97,19 @@ public class SuperArray{
   }
 
   public void add(int index, String str){
-    SuperArray copy = new SuperArray(this);
-    if (copy.data.length == copy.size){copy.resize();}
-    copy.data[index] = str;
-    for (int n = index + 1; n < size + 1; n++){
-      copy.data[n] = data[n-1];
+    if (index < 0 || index > size()){
+      System.out.println("IndexOutOfBounds");
     }
-    data = copy.data;
-    size++;
+    else {
+      SuperArray copy = new SuperArray(this);
+      if (copy.data.length == copy.size){copy.resize();}
+      copy.data[index] = str;
+      for (int n = index + 1; n < size + 1; n++){
+        copy.data[n] = data[n-1];
+      }
+      data = copy.data;
+      size++;
+    }
   }
     //Static methods for testing purposes
   public static int getTrueSize(SuperArray x){
