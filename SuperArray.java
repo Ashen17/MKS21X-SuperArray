@@ -111,6 +111,16 @@ public class SuperArray{
       size++;
     }
   }
+
+  public String remove(int index){
+    if (index < 0 || index > size()){return null;}
+    String old = data[index];
+    for(int n = index; index < size - 1; n++){
+      data[n] = data[n+1];
+    }
+    data[size - 1] = null;
+    return old;
+  }
     //Static methods for testing purposes
   public static int getTrueSize(SuperArray x){
       return x.data.length;

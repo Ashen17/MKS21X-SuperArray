@@ -56,5 +56,7 @@ public class Driver{
     SuperArray g = new SuperArray(h);
     g.add(2, "lithium");
     System.out.println("Expected:[hydrogen, helium, lithium, berylium, boron, carbon] Actual: " + g);
+    System.out.println("Expected: carbon Actual: " + g.remove(5));
+    System.out.println("Expected:[hydrogen, helium, lithium, berylium, boron] Actual: " + g);
   }
 }
