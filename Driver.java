@@ -28,8 +28,27 @@ public class Driver{
     System.out.println("Expected: null Actual:" + c.set(-1, "hello") + " IndexOutOfBounds will be printed above");
     System.out.println("Expected: hi Actual:" + c.get(0));
     System.out.println("Expected: {hi, bye, greetings, konichiwa, hola, nihao} Actual:" + c);
-    c.set(0, "hello");
+    System.out.println("Expected: hi Actual:" + c.set(0, "hello"));
     System.out.println("Expected: hello Actual:" + c.get(0));
     System.out.println("Expected: {hello, bye, greetings, konichiwa, hola, nihao} Actual:" + c);
+    System.out.println("Phase 3");
+    String[] e = new String[]{"fire", "water", "electric", "normal", "grass", "earth"};
+    SuperArray f = new SuperArray(e);
+    System.out.println("Expected: {fire, water, electric, normal, grass, earth} Actual:" + e);
+    System.out.println("Expected: {fire, water, electric, normal, grass, earth} Actual:" + f.toStringDebug());
+    System.out.println("Expected: true  Actual:" + f.contain("normal"));
+    System.out.println("Expected: false  Actual:" + f.contain("Normal"));
+    System.out.println("Expected: false  Actual:" + f.contain("psychic"));
+    System.out.println("Expected: true  Actual:" + f.contain("fire"));
+    System.out.println("Expected: true  Actual:" + f.contain("earth"));
+    System.out.println("Expected: 0  Actual:" + f.indexOf("fire"));
+    System.out.println("Expected: 5  Actual:" + f.indexOf("earth"));
+    System.out.println("Expected: -1  Actual:" + f.indexOf("psychic"));
+    System.out.println("Expected: normal  Actual:" + f.set(3, "fire"));
+    System.out.println("Expected: grass  Actual:" + f.set(4, "earth"));
+    System.out.println("Expected: 0  Actual:" + f.indexOf("fire"));
+    System.out.println("Expected: 3  Actual:" + f.lastIndexOf("fire"));
+    System.out.println("Expected: 4  Actual:" + f.indexOf("earth"));
+    System.out.println("Expected: 5  Actual:" + f.lastIndexOf("earth"));
     }
   }
