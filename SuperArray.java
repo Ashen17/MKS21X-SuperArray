@@ -11,6 +11,11 @@ public class SuperArray{
     data = ary;
     size = ary.length;
   }
+  public SuperArray(SuperArray a){
+    data = a.data;
+    size = a.size;
+  }
+
   public void clear(){
     size = 0;
   }
@@ -87,6 +92,17 @@ public class SuperArray{
       if (data[n].equals(str)){return n;}
     }
     return -1;
+  }
+
+  public void add(int index, String str){
+    SuperArray copy = new SuperArray(this);
+    if (copy.data.length == copy.size){copy.resize();}
+    copy.data[index] = str;
+    for (int n = index + 1; n < size + 1; n++){
+      copy.data[n] = data[n-1];
+    }
+    data = copy.data;
+    size++;
   }
     //Static methods for testing purposes
   public static int getTrueSize(SuperArray x){
