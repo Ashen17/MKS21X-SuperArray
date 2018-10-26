@@ -83,7 +83,7 @@ public class SuperArray{
   }
 
   public int lastIndexOf(String str){
-    for (int n = size; n > -1; n--){
+    for (int n = size - 1; n > -1; n--){
       if (data[n].equals(str)){return n;}
     }
     return -1;

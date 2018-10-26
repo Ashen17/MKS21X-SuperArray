@@ -34,7 +34,7 @@ public class Driver{
     System.out.println("Phase 3");
     String[] e = new String[]{"fire", "water", "electric", "normal", "grass", "earth"};
     SuperArray f = new SuperArray(e);
-    System.out.println("Expected: {fire, water, electric, normal, grass, earth} Actual:" + e);
+    System.out.println("Expected: {fire, water, electric, normal, grass, earth} Actual:" + f);
     System.out.println("Expected: {fire, water, electric, normal, grass, earth} Actual:" + f.toStringDebug());
     System.out.println("Expected: true  Actual:" + f.contain("normal"));
     System.out.println("Expected: false  Actual:" + f.contain("Normal"));
