@@ -119,7 +119,16 @@ public class SuperArray{
       data[n] = data[n+1];
     }
     data[size - 1] = null;
+    size--;
     return old;
+  }
+
+  public boolean remove(String str){
+    if (this.contain(str)){
+      this.remove(indexOf(str));
+      return true;
+    }
+    return false;
   }
     //Static methods for testing purposes
   public static int getTrueSize(SuperArray x){
