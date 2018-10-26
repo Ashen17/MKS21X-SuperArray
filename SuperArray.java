@@ -7,13 +7,31 @@ public class SuperArray{
     size = 0;
   }
 
+  public SuperArray(SuperArray a){
+    String[] info = new String[a.data.length];
+    for (int n = 0; n < a.size(); n++){
+      info[n] = a.data[n];
+    }
+    data = info;
+    size = a.size;
+  }
+
   public SuperArray(String[] ary){
-    data = ary;
+    String[] info = new String[ary.length];
+    for (int n = 0; n < ary.length; n++){
+      info[n] = ary[n];
+    }
+    data = info;
     size = ary.length;
   }
-  public SuperArray(SuperArray a){
-    data = a.data;
-    size = a.size;
+
+  public SuperArray(String[] ary, int big){
+    String[] info = new String[ary.length];
+    for (int n = 0; n < ary.length; n++){
+      info[n] = ary[n];
+    }
+    data = info;
+    size = big;
   }
 
   public void clear(){
@@ -75,7 +93,7 @@ public class SuperArray{
     return true;
   }
 
-  public boolean contain(String str){
+  public boolean contains(String str){
     for (int n = 0; n < size; n++){
       if (data[n].equals(str)){return true;}
     }
@@ -105,7 +123,7 @@ public class SuperArray{
       if (copy.data.length == copy.size){copy.resize();}
       copy.data[index] = str;
       for (int n = index + 1; n < size + 1; n++){
-        copy.data[n] = data[n-1];
+        copy.data[n] = this.data[n-1];
       }
       data = copy.data;
       size++;
@@ -113,7 +131,10 @@ public class SuperArray{
   }
 
   public String remove(int index){
-    if (index < 0 || index >= size()){return null;}
+    if (index < 0 || index >= size()){
+      System.out.println("IndexOutOfBounds");
+      return null;
+    }
     String old = data[index];
     for(int n = index; n < size - 1; n++){
       data[n] = data[n+1];
@@ -124,7 +145,7 @@ public class SuperArray{
   }
 
   public boolean remove(String str){
-    if (this.contain(str)){
+    if (this.contains(str)){
       this.remove(indexOf(str));
       return true;
     }

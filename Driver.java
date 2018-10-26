@@ -38,11 +38,11 @@ public class Driver{
     SuperArray f = new SuperArray(e);
     System.out.println("Expected: [fire, water, electric, normal, grass, earth] Actual:" + f);
     System.out.println("Expected: [fire, water, electric, normal, grass, earth] Actual:" + f.toStringDebug());
-    System.out.println("Expected: true  Actual:" + f.contain("normal"));
-    System.out.println("Expected: false  Actual:" + f.contain("Normal"));
-    System.out.println("Expected: false  Actual:" + f.contain("psychic"));
-    System.out.println("Expected: true  Actual:" + f.contain("fire"));
-    System.out.println("Expected: true  Actual:" + f.contain("earth"));
+    System.out.println("Expected: true  Actual:" + f.contains("normal"));
+    System.out.println("Expected: false  Actual:" + f.contains("Normal"));
+    System.out.println("Expected: false  Actual:" + f.contains("psychic"));
+    System.out.println("Expected: true  Actual:" + f.contains("fire"));
+    System.out.println("Expected: true  Actual:" + f.contains("earth"));
     System.out.println("Expected: 0  Actual:" + f.indexOf("fire"));
     System.out.println("Expected: 5  Actual:" + f.indexOf("earth"));
     System.out.println("Expected: -1  Actual:" + f.indexOf("psychic"));
@@ -62,5 +62,6 @@ public class Driver{
     System.out.println("Expected: true Actual: " + g.remove("hydrogen"));
     System.out.println("Expected:[helium, lithium, berylium, boron] Actual: " + g);
     System.out.println("Expected:[helium, lithium, berylium, boron, null, null, null, null, null, null, null] Actual: " + g.toStringDebug());
+
   }
 }
