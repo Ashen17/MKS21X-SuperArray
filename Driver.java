@@ -62,6 +62,7 @@ public class Driver{
     System.out.println("Expected: true Actual: " + g.remove("hydrogen"));
     System.out.println("Expected:[helium, lithium, berylium, boron] Actual: " + g);
     System.out.println("Expected:[helium, lithium, berylium, boron, null, null, null, null, null, null, null] Actual: " + g.toStringDebug());
-
+    try{}
+    catch(IndexOutOfBoundsException IndexE){System.out.println("IndexOutOfBounds");}
   }
 }
