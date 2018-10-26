@@ -58,5 +58,9 @@ public class Driver{
     System.out.println("Expected:[hydrogen, helium, lithium, berylium, boron, carbon] Actual: " + g);
     System.out.println("Expected: carbon Actual: " + g.remove(5));
     System.out.println("Expected:[hydrogen, helium, lithium, berylium, boron] Actual: " + g);
+    System.out.println("Expected:[hydrogen, helium, lithium, berylium, boron, null, null, null, null, null, null] Actual: " + g.toStringDebug());
+    System.out.println("Expected: true Actual: " + g.remove("hydrogen"));
+    System.out.println("Expected:[helium, lithium, berylium, boron] Actual: " + g);
+    System.out.println("Expected:[helium, lithium, berylium, boron, null, null, null, null, null, null, null] Actual: " + g.toStringDebug());
   }
 }

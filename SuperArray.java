@@ -97,7 +97,7 @@ public class SuperArray{
   }
 
   public void add(int index, String str){
-    if (index < 0 || index > size()){
+    if (index < 0 || index >= size()){
       System.out.println("IndexOutOfBounds");
     }
     else {
@@ -113,9 +113,9 @@ public class SuperArray{
   }
 
   public String remove(int index){
-    if (index < 0 || index > size()){return null;}
+    if (index < 0 || index >= size()){return null;}
     String old = data[index];
-    for(int n = index; index < size - 1; n++){
+    for(int n = index; n < size - 1; n++){
       data[n] = data[n+1];
     }
     data[size - 1] = null;
