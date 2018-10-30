@@ -1,5 +1,6 @@
 public class Driver{
   public static void main(String[] args) {
+    try{
     System.out.println("Phase 1 and resize Driver");
     SuperArray a = new SuperArray();
     System.out.println("Expected: [] Actual:" + a);
@@ -24,10 +25,17 @@ public class Driver{
     String[] d = new String[]{"hi", "bye", "greetings", "konichiwa", "hola", "nihao"};
     SuperArray c = new SuperArray(d);
     System.out.println("Expected: bye  Actual:" + c.get(1));
-    System.out.println("Expected: null Actual:" + c.get(7) + " IndexOutOfBounds will be printed above");
-    System.out.println("Expected: null Actual:" + c.get(-4) + " IndexOutOfBounds will be printed above");
-    System.out.println("Expected: null Actual:" + c.set(7, "hello") + " IndexOutOfBounds will be printed above");
-    System.out.println("Expected: null Actual:" + c.set(-1, "hello") + " IndexOutOfBounds will be printed above");
+
+    try{System.out.println("Expected: IndexOutOfBounds Actual:" + c.get(7));}
+    catch(IndexOutOfBoundsException e){System.out.println("Expected: IndexOutOfBounds Actual:" + c.get(7));}
+
+    try{System.out.println("Expected: IndexOutOfBounds in get(int) Actual:" + c.get(-4));}
+    catch(IndexOutOfBoundsException e){System.out.println("Expected: IndexOutOfBounds  Actual:" + c.get(-4)))}
+
+    try(System.out.println("Expected: IndexOutOfBounds Actual:" + c.set(7, "hello")));
+    catch(catch(IndexOutOfBoundsException e){System.out.println("Expected: IndexOutOfBounds  Actual:" + c.set(7, "hello")))})
+
+    System.out.println("Expected: IndexOutOfBounds in set(int, String) Actual:" + c.set(-1, "hello"));
     System.out.println("Expected: hi Actual:" + c.get(0));
     System.out.println("Expected: {hi, bye, greetings, konichiwa, hola, nihao} Actual:" + c);
     System.out.println("Expected: hi Actual:" + c.set(0, "hello"));
@@ -62,7 +70,10 @@ public class Driver{
     System.out.println("Expected: true Actual: " + g.remove("hydrogen"));
     System.out.println("Expected:[helium, lithium, berylium, boron] Actual: " + g);
     System.out.println("Expected:[helium, lithium, berylium, boron, null, null, null, null, null, null, null] Actual: " + g.toStringDebug());
-    try{}
-    catch(IndexOutOfBoundsException IndexE){System.out.println("IndexOutOfBounds");}
   }
+  catch(IndexOutOfBoundsException e){
+    System.out.println("IndexOutOfBounds");
+  }
+
+}
 }

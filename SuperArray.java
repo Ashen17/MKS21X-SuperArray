@@ -69,13 +69,13 @@ public class SuperArray{
   }
   public String get(int pos){
     if (pos < 0 || pos >= size()){
-      throw new IndexOutOfBoundsException();
+      throw new IndexOutOfBoundsException("IndexOutOfBounds");
     }
     return data[pos];
   }
   public String set(int pos, String str){
     if (pos < 0 || pos >= size()){
-      throw new IndexOutOfBoundsException();
+      throw new IndexOutOfBoundsException("IndexOutOfBounds");
     }
     String old = data[pos];
     data[pos] = str;
@@ -119,7 +119,7 @@ public class SuperArray{
 
   public void add(int index, String str){
     if (index < 0 || index >= size()){
-      throw new IndexOutOfBoundsException();
+      throw new IndexOutOfBoundsException("IndexOutOfBounds");
     }
     else {
       SuperArray copy = new SuperArray(this);
@@ -135,8 +135,7 @@ public class SuperArray{
 
   public String remove(int index){
     if (index < 0 || index >= size()){
-      throw new IndexOutOfBoundsException();
-
+      throw new IndexOutOfBoundsException("IndexOutOfBounds");
     }
     String old = data[index];
     for(int n = index; n < size - 1; n++){
