@@ -27,15 +27,17 @@ public class Driver{
     System.out.println("Expected: bye  Actual:" + c.get(1));
 
     try{System.out.println("Expected: IndexOutOfBounds Actual:" + c.get(7));}
-    catch(IndexOutOfBoundsException e){System.out.println("Expected: IndexOutOfBounds Actual:" + c.get(7));}
+    catch(IndexOutOfBoundsException e){System.out.println("Expected: IndexOutOfBounds Actual:" + " IndexOutOfBounds");}
 
     try{System.out.println("Expected: IndexOutOfBounds in get(int) Actual:" + c.get(-4));}
-    catch(IndexOutOfBoundsException e){System.out.println("Expected: IndexOutOfBounds  Actual:" + c.get(-4)))}
+    catch(IndexOutOfBoundsException e){System.out.println("Expected: IndexOutOfBounds  Actual:" + " IndexOutOfBounds");}
 
-    try(System.out.println("Expected: IndexOutOfBounds Actual:" + c.set(7, "hello")));
-    catch(catch(IndexOutOfBoundsException e){System.out.println("Expected: IndexOutOfBounds  Actual:" + c.set(7, "hello")))})
+    try{System.out.println("Expected: IndexOutOfBounds Actual:" + c.set(7, "hello"));}
+    catch(IndexOutOfBoundsException e){System.out.println("Expected: IndexOutOfBounds  Actual:" + " IndexOutOfBounds");}
 
-    System.out.println("Expected: IndexOutOfBounds in set(int, String) Actual:" + c.set(-1, "hello"));
+    try{System.out.println("Expected: IndexOutOfBounds in set(int, String) Actual:" + c.set(-1, "hello"));}
+    catch(IndexOutOfBoundsException e){System.out.println("Expected: IndexOutOfBounds Actual:" + " IndexOutOfBounds");}
+
     System.out.println("Expected: hi Actual:" + c.get(0));
     System.out.println("Expected: {hi, bye, greetings, konichiwa, hola, nihao} Actual:" + c);
     System.out.println("Expected: hi Actual:" + c.set(0, "hello"));
